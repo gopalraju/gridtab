@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Gridtab by gopalraju</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Gridtab</h1>
+          <h2>GridTab is a lightweight jQuery plugin to create grid based responsive tabs https://gopalraju.github.io/gridtab</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/gopalraju/gridtab/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/gopalraju/gridtab/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/gopalraju/gridtab" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="gridtab-jquery-plugin" class="anchor" href="#gridtab-jquery-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GridTab jQuery Plugin</h1>
+
+<p><strong>GridTab</strong> is a lightweight jQuery plugin to create grid based responsive tabs.</p>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="http://gopalraju.github.io/gridtab">http://gopalraju.github.io/gridtab</a></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Setting up GridTab is really simple</p>
+
+<h3>
+<a id="html-markup" class="anchor" href="#html-markup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML Markup</h3>
+
+<p>Your markup should look something like this</p>
+
+<pre><code>&lt;dl id="gridtab-1"&gt;
+    &lt;dt&gt;Tab 1&lt;/dt&gt;
+    &lt;dd&gt;Tab 1 Description&lt;/dd&gt;
+    &lt;dt&gt;Tab 2&lt;/dt&gt;
+    &lt;dd&gt;Tab 2 Description&lt;/dd&gt;
+    &lt;dt&gt;Tab 3&lt;/dt&gt;
+    &lt;dd&gt;Tab 3 Description&lt;/dd&gt;
+    &lt;dt&gt;Tab 4&lt;/dt&gt;
+    &lt;dd&gt;Tab 4 Description&lt;/dd&gt;
+    &lt;dt&gt;Tab 5&lt;/dt&gt;
+    &lt;dd&gt;Tab 5 Description&lt;/dd&gt;
+    &lt;dt&gt;Tab 6&lt;/dt&gt;
+    &lt;dd&gt;Tab 6 Description&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+
+<p>Where, <code>&lt;dt&gt;</code> contains the title of the tab nad <code>&lt;dd&gt;</code> contains the description to be shown on click.</p>
+
+<h3>
+<a id="stylesheet" class="anchor" href="#stylesheet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Stylesheet</h3>
+
+<p>Just add a link to the css file in your </p>:
+
+<p><code>&lt;link rel="stylesheet" type="text/css" href="gridtab.min.css"/&gt;</code></p>
+
+<h3>
+<a id="jquery-plugin" class="anchor" href="#jquery-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery Plugin</h3>
+
+<p>Then, before your closing <code>&lt;body&gt;</code> tag add:</p>
+
+<p><code>&lt;script type="text/javascript" src="gridtab.min.js"&gt;&lt;/script&gt;</code></p>
+
+<p>and initialize the plugin as shown below:</p>
+
+<pre><code>&lt;script&gt;
+    $(document).ready(function() {
+        $('#gridtab-1').gridtab({
+            grid:3
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<p>Where grid is the number of grids/tabs in a row</p>
+
+<h2>
+<a id="settings" class="anchor" href="#settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Settings</h2>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grid</td>
+<td>integer</td>
+<td>4</td>
+<td>Number of grids or tabs per row</td>
+</tr>
+<tr>
+<td>borderWidth</td>
+<td>integer</td>
+<td>2</td>
+<td>Width of the borders</td>
+</tr>
+<tr>
+<td>tabBorderColor</td>
+<td>string</td>
+<td>'#ddd'</td>
+<td>border color of the tabs (Hex Color Code).</td>
+</tr>
+<tr>
+<td>tabPadding</td>
+<td>integer</td>
+<td>25</td>
+<td>padding/spacing around the tabs.</td>
+</tr>
+<tr>
+<td>contentBorderColor</td>
+<td>string</td>
+<td>'#ddd'</td>
+<td>border color of the content section (Hex Color Code).</td>
+</tr>
+<tr>
+<td>contentPadding</td>
+<td>integer</td>
+<td>25</td>
+<td>padding/spacing around content section</td>
+</tr>
+<tr>
+<td>contentBackground</td>
+<td>string</td>
+<td>'#fff'</td>
+<td>Background color for the content section (Hex Color Code).</td>
+</tr>
+<tr>
+<td>activeTabBackground</td>
+<td>string</td>
+<td>'#fff'</td>
+<td>Background color for the active tab (Hex Color Code).</td>
+</tr>
+<tr>
+<td>keepOpen</td>
+<td>Boolean</td>
+<td>false</td>
+<td>If set to <code>true</code> keeps the active tab open (Disables toggle).</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>integer</td>
+<td>500</td>
+<td>Transition speed in milliseconds</td>
+</tr>
+<tr>
+<td>layout</td>
+<td>string</td>
+<td>'grid'</td>
+<td>Change the value to <code>'tab'</code> for a tab layout. By default, the layout is <code>'grid'</code> based.</td>
+</tr>
+<tr>
+<td>activeTab</td>
+<td>integer</td>
+<td>0</td>
+<td>Initially active tab. For example, <code>1</code> enables the first tab.</td>
+</tr>
+<tr>
+<td>Responsive</td>
+<td>Array</td>
+<td>null</td>
+<td>Array of objects having breakpoints and <code>settings</code> object which is enabled at a given <code>breakpoint</code>.</td>
+</tr>
+<tr>
+<td>callbacks</td>
+<td>Object</td>
+<td>open:false, close:false</td>
+<td>Callbacks for the open and close states of the content section.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>
+<a id="responsive-example" class="anchor" href="#responsive-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Responsive Example</h3>
+
+<p>The responsive settings is where you reset the grids and other properties at a given breakpoint.</p>
+
+<pre><code>$('#gridtab-1').gridtab({
+    grid:5,
+    contentPadding: 40
+    responsive:[{
+        breakpoint: 1024,
+        settings:{
+            grid:3,
+            contentPadding: 30
+        }
+    },{
+        breakpoint:767,
+        settings:{
+            grid:2,
+            contentPadding: 25
+        }
+    },{
+        breakpoint:520,
+        settings:{
+            grid:1,
+            contentPadding: 20
+        }
+    }]
+});
+</code></pre>
+
+<p>The properties that can be changed with the responsive settings are: <code>borderWidth</code>, <code>tabPadding</code>, <code>tabBorderColor</code>, <code>contentBorderColor</code>, <code>contentPadding</code>, <code>contentBackground</code> and <code>activeTabBackground</code>.</p>
+
+<h2>
+<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h2>
+
+<p>1.0.0</p>
+
+<h2>
+<a id="browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser support</h2>
+
+<p>GridTab works on IE10+ in addition to other modern browsers like Chrome, Firefox and Safari</p>
+
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<p>jQuery 1.8.3 +</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Licensed under the MIT license.</p>
+        </section>
+
+        <footer>
+          Gridtab is maintained by <a href="https://github.com/gopalraju">gopalraju</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
