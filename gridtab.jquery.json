@@ -1,0 +1,34 @@
+{
+    "name": "gridtab",
+    "title": "gridtab",
+    "description": "jQuery plugin to create grid based responsive tabs",
+    "keywords": [
+        "responsive",
+        "grid",
+        "tab",
+        "accordion",
+        "navigation"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Gopal Raju",
+        "url": "http://gopalraju.github.io"
+    },
+    "maintainers": [{
+        "name": "Gopal Raju",
+        "email": "productivedreams@gmail.com",
+        "url": "http://www.productivedreams.com"
+    }],
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/kenwheeler/slick/blob/master/LICENSE"
+    }],
+    "demo": "http://gopalraju.github.io/gridtab/",
+    "bugs": "https://github.com/gopalraju/gridtab/issues",
+    "homepage": "https://github.com/gopalraju/gridtab/",
+    "docs": "https://github.com/gopalraju/gridtab/",
+    "download": "https://github.com/gopalraju/gridtab/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.8.3"
+    }
+}
