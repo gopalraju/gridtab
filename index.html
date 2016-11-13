@@ -3,9 +3,11 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Sansita+One|Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/prism.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="gridtab/gridtab.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/en/styles/gridtab-theme.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -14,78 +16,541 @@
   </head>
 
   <body>
-    <div id="container">
+
       <div class="inner">
 
         <header>
-          <h1>Gridtab</h1>
-          <h2>GridTab is a lightweight jQuery plugin to create grid based responsive tabs https://gopalraju.github.io/gridtab</h2>
+          <div class="brand">
+          <span>JQUERY <i>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
+<path fill="#FFFFFF" d="M68,70H2c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h66c1.1,0,2,0.9,2,2v66C70,69.1,69.1,70,68,70z M65,7
+	c0-1.1-0.9-2-2-2H8C6.9,5,5,5.9,5,7v56c0,1.1,0.9,2,2,2h56c1.1,0,2-0.9,2-2V7z M58,59H12c-1.1,0-1-0.9-1-2V29.9c0-1.6-0.1-2.9,1-2.9
+	h9.9c1.1,0,1,1.3,1,2.9V43H58c1.1,0,1,0.9,1,2v12C59,58.1,59.1,59,58,59z M58,37H48c-1.1,0-1-0.9-1-2v-6c0-1.1-0.1-2,1-2h10
+	c1.1,0,1,0.9,1,2v6C59,36.1,59.1,37,58,37z M59,20c0,1.1-0.9,1-2,1h-9c-1.1,0-1-0.9-1-2v-6c0-1.1-0.1-2,1-2h10c1.1,0,1,0.9,1,2V20z
+	 M40,37H30c-1.1,0-1-0.9-1-2v-6c0-1.1-0.1-2,1-2h10c1.1,0,1,0.9,1,2v6C41,36.1,41.1,37,40,37z M40,21H30c-1.1,0-1-0.9-1-2v-6
+	c0-1.1-0.1-2,1-2h10c1.1,0,1,0.9,1,2v6C41,20.1,41.1,21,40,21z M22,21h-9c-1.1,0-2,0.1-2-1v-7c0-1.1-0.1-2,1-2h10c1.1,0,1,0.9,1,2v6
+	C23,20.1,23.1,21,22,21z"/>
+</svg></i>
+PLUGIN</span>
+          <h1>GridTab</h1>
+          <h2>GRID BASED RESPONSIVE TABS</h2>
+          </div>
+          <div class="meta">
+            <ul>
+              <li>
+                <a href="https://github.com/gopalraju/gridtab/zipball/master"><i><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 33.9" enable-background="new 0 0 32 33.9" xml:space="preserve">
+<g>
+	<path fill="#FFFFFF" d="M15.8,18c0.1-0.1,0.1-0.3,0.1-0.6v-0.6c0-0.3,0-0.4-0.1-0.5c-0.1-0.1-0.2-0.1-0.5-0.1v1.9
+		c0.1,0,0.1,0,0.1,0C15.6,18.1,15.7,18.1,15.8,18z"/>
+	<path fill="#FFFFFF" d="M23.3,0h-16c-2.8,0-5,2.2-5,5v8C1.1,13.1,0,14.2,0,15.5v6.7c0,1.3,1.1,2.4,2.4,2.5v4.2c0,2.8,2.2,5,5,5
+		h19.6c2.8,0,5-2.2,5-5V9.3L23.3,0z M3.1,22.5v-1.1l1.5-4.9H3.2v-1.5h3.4v1.5L5.2,21h1.5v1.5H3.1z M29,28.9c0,1.1-0.9,2-2,2H7.4
+		c-1.1,0-2-0.9-2-2v-4.2h13c1.4,0,2.5-1.1,2.5-2.5v-6.7c0-1.4-1.1-2.5-2.5-2.5h-13V5c0-1.1,0.9-2,2-2H22v4.6c0,1.8,1.4,3.2,3.2,3.2
+		H29V28.9z M8.9,22.5v-7.6h2v7.6H8.9z M13.3,22.5v-7.6h2c0.5,0,0.9,0,1.2,0.1s0.5,0.2,0.6,0.4c0.1,0.2,0.2,0.4,0.3,0.6
+		c0.1,0.2,0.1,0.6,0.1,1v0.7c0,0.5,0,0.8-0.1,1.1c-0.1,0.2-0.3,0.4-0.5,0.5s-0.6,0.2-1,0.2h-0.5v3H13.3z"/>
+</g>
+</svg></i><span>download</span>.ZIP FILE</a>
+              </li>
+              <li>
+                <a href="https://github.com/gopalraju/gridtab"><i><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 29.6 33.9" enable-background="new 0 0 29.6 33.9" xml:space="preserve">
+<g>
+	<path fill="#F9F9FA" d="M21,0H5C2.2,0,0,2.2,0,5v23.9c0,2.8,2.2,5,5,5h19.6c2.8,0,5-2.2,5-5V9.3L21,0z M24.6,30.9h-7.1v-3.1
+		c0-1.2-0.4-2-0.8-2.3c2.8-0.3,5.8-1.4,5.8-6.3c0-1.4-0.5-2.5-1.3-3.4c0.1-0.3,0.5-1.6-0.2-3.3c0,0-1-0.3-3.5,1.3
+		c-1-0.3-2.2-0.5-3.2-0.5c-1.1,0-2.2,0.2-3.2,0.5c-2.4-1.6-3.5-1.3-3.5-1.3c-0.7,1.8-0.3,3-0.2,3.3c-0.8,0.9-1.3,2-1.3,3.4
+		c0,4.9,3,5.9,5.8,6.3c-0.4,0.3-0.7,0.9-0.8,1.7c-0.7,0.3-2.6,0.9-3.7-1.1c0,0-0.7-1.2-1.9-1.3c0,0-1.3,0-0.1,0.8
+		c0,0,0.8,0.4,1.4,1.9c0,0,0.8,2.4,4.3,1.7v1.8H5c-1.1,0-2-0.9-2-2V5c0-1.1,0.9-2,2-2h14.6v4.6c0,1.8,1.4,3.2,3.2,3.2h3.8v18.1
+		C26.6,30,25.7,30.9,24.6,30.9z M16.7,23.5H12c-1.6,0-3-1.3-3-3c0-1.6,1.3-3,3-3h4.7c1.6,0,3,1.3,3,3C19.6,22.1,18.3,23.5,16.7,23.5
+		z"/>
+	<ellipse fill="#F9F9FA" cx="12.3" cy="20.7" rx="1" ry="1.4"/>
+	<ellipse fill="#F9F9FA" cx="16.4" cy="20.7" rx="1" ry="1.4"/>
+</g>
+</svg>
+</i><span>view on</span>GITHUB</a>
+              </li>
+            </ul>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#usecases">Use Cases</a></li>
+              <li><a href="#demos">Demos</a></li>
+              <li><a href="#usage">Usage</a></li>
+              <li><a href="#settings">Settings</a></li>
+          </nav>
         </header>
 
-        <section id="downloads" class="clearfix">
+        <div class="container">
+        <!-- <section id="downloads" class="clearfix">
           <a href="https://github.com/gopalraju/gridtab/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
           <a href="https://github.com/gopalraju/gridtab/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
           <a href="https://github.com/gopalraju/gridtab" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
         <hr>
-
-        <section id="main_content">
-          <h1>
-<a id="gridtab-jquery-plugin" class="anchor" href="#gridtab-jquery-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GridTab jQuery Plugin</h1>
-
+ -->
+<section>
+          <h3>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" ></span></a>Features</h3>
 <p><strong>GridTab</strong> is a lightweight jQuery plugin to create grid based responsive tabs.</p>
 
-<h2>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo</h2>
+<ul class="l-list">
+  <li>Fully responsive</li>
+  <li>Lightweight and works on CSS3 flexbox</li>
+  <li>Seperate settings for every breakpoint</li>
+  <li>Switch between Grid and Tab layout</li>
+</ul>
+</section>
 
-<p><a href="http://gopalraju.github.io/gridtab">http://gopalraju.github.io/gridtab</a></p>
+<section>
+  <h3><a id="usecases" class="anchor" href="#usecases" aria-hidden="true"><span aria-hidden="true" ></span></a>Use Cases</h3>
+  Girdtab could be a perfect solution for the following UI design patterns or use cases.
 
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+  <div class="usecases">
+
+<div class="svg">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 viewBox="0 0 568.6 634.1" enable-background="new 0 0 568.6 634.1" xml:space="preserve">
+        <g>
+        	<path fill="#FFFFFF" stroke="#E5E5E5" stroke-miterlimit="10" d="M563.2,633.6H5.5c-2.7,0-5-2.2-5-5V5.5c0-2.7,2.2-5,5-5h557.7
+        		c2.7,0,5,2.2,5,5v623.2C568.1,631.4,565.9,633.6,563.2,633.6z"/>
+        	<path fill="#E6E6E5" d="M568.5,35.9V5.7c0-2.7-2.2-5-5-5H6c-2.7,0-5,2.2-5,5v30.2H568.5z"/>
+        	<circle fill="#919191" cx="27.3" cy="17.9" r="5.5"/>
+        	<circle fill="#919191" cx="43" cy="17.9" r="5.5"/>
+        	<circle fill="#919191" cx="58.7" cy="17.9" r="5.5"/>
+        </g>
+        <g>
+        	<g>
+        		<g>
+        			<path fill="#E6E6E5" d="M356.5,233.8H211.9c-2.7,0-5-2.2-5-5V93.8c0-2.7,2.2-5,5-5h144.6c2.7,0,5,2.2,5,5v135.1
+        				C361.4,231.6,359.2,233.8,356.5,233.8z"/>
+        			<g>
+        				<path fill="#D6D5D5" d="M280.2,211.2h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+        					C283.3,209.8,281.9,211.2,280.2,211.2z"/>
+        				<path fill="#D6D5D5" d="M339.3,196.3H229.1c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h110.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+        					C342.4,194.9,341,196.3,339.3,196.3z"/>
+        			</g>
+        			<path fill="#D6D5D5" d="M288.3,140.8v-2.1c3.7-1.9,6.2-7.9,6.2-12.7c0-6.5-4.8-11.8-10.8-11.8s-10.8,5.3-10.8,11.8
+        				c0,4.6,2.5,10.6,6,12.5v2.4c-8.4,1.3-14.5,6.7-14.5,12c0,6.3,8.8,8.4,19.6,8.4s19.6-2.1,19.6-8.4
+        				C303.8,147.5,297.2,141.9,288.3,140.8z"/>
+        		</g>
+        		<g>
+        			<path fill="#E6E6E5" d="M522.1,233.8H377.5c-2.7,0-5-2.2-5-5V93.8c0-2.7,2.2-5,5-5h144.6c2.7,0,5,2.2,5,5v135.1
+        				C527.1,231.6,524.8,233.8,522.1,233.8z"/>
+        			<g>
+        				<path fill="#D6D5D5" d="M445.8,211.2h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+        					C448.9,209.8,447.5,211.2,445.8,211.2z"/>
+        				<path fill="#D6D5D5" d="M504.9,196.3H394.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h110.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+        					C508,194.9,506.6,196.3,504.9,196.3z"/>
+        			</g>
+        			<path fill="#D6D5D5" d="M453.9,140.8v-2.1c3.7-1.9,6.2-7.9,6.2-12.7c0-6.5-4.8-11.8-10.8-11.8s-10.8,5.3-10.8,11.8
+        				c0,4.6,2.5,10.6,6,12.5v2.4c-8.4,1.3-14.5,6.7-14.5,12c0,6.3,8.8,8.4,19.6,8.4s19.6-2.1,19.6-8.4
+        				C469.4,147.5,462.8,141.9,453.9,140.8z"/>
+        		</g>
+        		<g>
+        			<path fill="#E6E6E5" d="M190.8,233.8H46.3c-2.7,0-5-2.2-5-5V93.8c0-2.7,2.2-5,5-5h144.6c2.7,0,5,2.2,5,5v135.1
+        				C195.8,231.6,193.6,233.8,190.8,233.8z"/>
+        			<g>
+        				<path fill="#D6D5D5" d="M114.5,211.2h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+        					C117.7,209.8,116.2,211.2,114.5,211.2z"/>
+        				<path fill="#D6D5D5" d="M173.6,196.3H63.5c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h110.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+        					C176.7,194.9,175.3,196.3,173.6,196.3z"/>
+        			</g>
+        			<path fill="#D6D5D5" d="M122.7,140.8v-2.1c3.7-1.9,6.2-7.9,6.2-12.7c0-6.5-4.8-11.8-10.8-11.8s-10.8,5.3-10.8,11.8
+        				c0,4.6,2.5,10.6,6,12.5v2.4c-8.4,1.3-14.5,6.7-14.5,12c0,6.3,8.8,8.4,19.6,8.4s19.6-2.1,19.6-8.4
+        				C138.2,147.5,131.5,141.9,122.7,140.8z"/>
+        		</g>
+        	</g>
+        	<g>
+        		<g>
+        			<path fill="#E6E6E5" d="M356.5,391.8H211.9c-2.7,0-5-2.2-5-5V251.8c0-2.7,2.2-5,5-5h144.6c2.7,0,5,2.2,5,5v135.1
+        				C361.4,389.6,359.2,391.8,356.5,391.8z"/>
+        			<g>
+        				<path fill="#D6D5D5" d="M280.2,369.2h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+        					C283.3,367.8,281.9,369.2,280.2,369.2z"/>
+        				<path fill="#D6D5D5" d="M339.3,354.3H229.1c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h110.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+        					C342.4,352.9,341,354.3,339.3,354.3z"/>
+        			</g>
+        			<path fill="#D6D5D5" d="M288.3,298.8v-2.1c3.7-1.9,6.2-7.9,6.2-12.7c0-6.5-4.8-11.8-10.8-11.8s-10.8,5.3-10.8,11.8
+        				c0,4.6,2.5,10.6,6,12.5v2.4c-8.4,1.3-14.5,6.7-14.5,12c0,6.3,8.8,8.4,19.6,8.4s19.6-2.1,19.6-8.4
+        				C303.8,305.5,297.2,299.9,288.3,298.8z"/>
+        		</g>
+        		<g>
+        			<path fill="#E6E6E5" d="M522.1,391.8H377.5c-2.7,0-5-2.2-5-5V251.8c0-2.7,2.2-5,5-5h144.6c2.7,0,5,2.2,5,5v135.1
+        				C527.1,389.6,524.8,391.8,522.1,391.8z"/>
+        			<g>
+        				<path fill="#D6D5D5" d="M445.8,369.2h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+        					C448.9,367.8,447.5,369.2,445.8,369.2z"/>
+        				<path fill="#D6D5D5" d="M504.9,354.3H394.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h110.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+        					C508,352.9,506.6,354.3,504.9,354.3z"/>
+        			</g>
+        			<path fill="#D6D5D5" d="M453.9,298.8v-2.1c3.7-1.9,6.2-7.9,6.2-12.7c0-6.5-4.8-11.8-10.8-11.8s-10.8,5.3-10.8,11.8
+        				c0,4.6,2.5,10.6,6,12.5v2.4c-8.4,1.3-14.5,6.7-14.5,12c0,6.3,8.8,8.4,19.6,8.4s19.6-2.1,19.6-8.4
+        				C469.4,305.5,462.8,299.9,453.9,298.8z"/>
+        		</g>
+        		<g>
+        			<path fill="#FCDEE0" d="M190.8,391.8H46.3c-2.7,0-5-2.2-5-5V251.8c0-2.7,2.2-5,5-5h144.6c2.7,0,5,2.2,5,5v135.1
+        				C195.8,389.6,193.6,391.8,190.8,391.8z"/>
+        			<g>
+        				<path fill="#F8C5CD" d="M114.5,369.2h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+        					C117.7,367.8,116.2,369.2,114.5,369.2z"/>
+        				<path fill="#F8C5CD" d="M173.6,354.3H63.5c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h110.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+        					C176.7,352.9,175.3,354.3,173.6,354.3z"/>
+        			</g>
+        			<path fill="#F8C5CD" d="M122.7,298.8v-2.1c3.7-1.9,6.2-7.9,6.2-12.7c0-6.5-4.8-11.8-10.8-11.8s-10.8,5.3-10.8,11.8
+        				c0,4.6,2.5,10.6,6,12.5v2.4c-8.4,1.3-14.5,6.7-14.5,12c0,6.3,8.8,8.4,19.6,8.4s19.6-2.1,19.6-8.4
+        				C138.2,305.5,131.5,299.9,122.7,298.8z"/>
+        		</g>
+        	</g>
+        	<g>
+        		<path fill="#FCDEE0" d="M522.4,567.2H46.5c-2.7,0-5-2.2-5-5V410c0-2.7,2.2-5,5-5h475.8c2.7,0,5,2.2,5,5v152.2
+        			C527.3,564.9,525.1,567.2,522.4,567.2z"/>
+        		<g>
+        			<path fill="#F8C5CD" d="M122.8,532.2h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+        				C125.9,530.8,124.5,532.2,122.8,532.2z"/>
+        			<path fill="#F8C5CD" d="M342.8,532.2h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+        				C345.9,530.8,344.5,532.2,342.8,532.2z"/>
+        			<path fill="#F8C5CD" d="M319.8,507.3H71.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h248.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+        				C323,505.9,321.6,507.3,319.8,507.3z"/>
+        			<path fill="#F8C5CD" d="M342.8,480.7H71.8c-1.7,0-3.1-1.4-3.1-3.1V475c0-1.7,1.4-3.1,3.1-3.1h271.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+        				C345.9,479.3,344.5,480.7,342.8,480.7z"/>
+        			<path fill="#F8C5CD" d="M81.2,451h-9.4c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h9.4c1.7,0,3.1,1.4,3.1,3.1v2.5
+        				C84.3,449.6,82.9,451,81.2,451z"/>
+        			<path fill="#F8C5CD" d="M167.8,451H96.1c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h71.7c1.7,0,3.1,1.4,3.1,3.1v2.5
+        				C170.9,449.6,169.5,451,167.8,451z"/>
+        		</g>
+        		<g>
+        			<path fill="#F8C5CD" d="M498.2,535.3h-92.6c-2.7,0-5-2.2-5-5v-93.6c0-2.7,2.2-5,5-5h92.6c2.7,0,5,2.2,5,5v93.6
+        				C503.1,533.1,500.9,535.3,498.2,535.3z"/>
+        			<path fill="#FCDEE0" d="M456,486.6v-2.1c3.7-1.9,6.2-7.9,6.2-12.7c0-6.5-4.8-11.8-10.8-11.8s-10.8,5.3-10.8,11.8
+        				c0,4.6,2.5,10.6,6,12.5v2.4c-8.4,1.3-14.5,6.7-14.5,12c0,6.3,8.8,8.4,19.6,8.4s19.6-2.1,19.6-8.4
+        				C471.5,493.3,464.9,487.7,456,486.6z"/>
+        		</g>
+        	</g>
+        </g>
+        </svg>
+      </div>
+        <div class="svg">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    	 viewBox="0 0 568.6 634.1" enable-background="new 0 0 568.6 634.1" xml:space="preserve">
+    <g>
+    	<path fill="#FFFFFF" stroke="#E5E5E5" stroke-miterlimit="10" d="M563.2,633.6H5.5c-2.7,0-5-2.2-5-5V5.5c0-2.7,2.2-5,5-5h557.7
+    		c2.7,0,5,2.2,5,5v623.2C568.1,631.4,565.9,633.6,563.2,633.6z"/>
+    	<path fill="#E6E6E5" d="M568.5,35.9V5.7c0-2.7-2.2-5-5-5H6c-2.7,0-5,2.2-5,5v30.2H568.5z"/>
+    	<circle fill="#919191" cx="27.3" cy="17.9" r="5.5"/>
+    	<circle fill="#919191" cx="43" cy="17.9" r="5.5"/>
+    	<circle fill="#919191" cx="58.7" cy="17.9" r="5.5"/>
+    </g>
+    <g>
+    	<path fill="#E7F1D5" d="M287.4,173.9c-3.3,0-4-4-4-4v-64.8c0-2.7-2.2-5-5-5H168.3c-2.7,0-5,2.2-5,5v64.7l-0.1,0c0,0-0.6,4-4,4
+    		s3,5.8,3,5.8l1.4-0.7c0.7,1.9,2.5,3.2,4.6,3.2h110.2c2.1,0,3.9-1.3,4.6-3.1l1.3,0.7C284.4,179.7,290.8,173.9,287.4,173.9z"/>
+    	<path fill="#E7F1D5" d="M522.5,336H46.7c-2.7,0-5-2.2-5-5V178.8c0-2.7,2.2-5,5-5h475.8c2.7,0,5,2.2,5,5V331
+    		C527.5,333.8,525.3,336,522.5,336z"/>
+    	<g>
+    		<path fill="#CEE0B5" d="M276.1,301h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C279.2,299.6,277.8,301,276.1,301z"/>
+    		<path fill="#CEE0B5" d="M496.1,301h-51c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h51c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C499.2,299.6,497.8,301,496.1,301z"/>
+    		<path fill="#CEE0B5" d="M473.1,276.2H225c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h248.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C476.2,274.8,474.8,276.2,473.1,276.2z"/>
+    		<path fill="#CEE0B5" d="M496.1,249.5H225c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h271.1c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C499.2,248.1,497.8,249.5,496.1,249.5z"/>
+    		<path fill="#CEE0B5" d="M234.5,219.8H225c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h9.4c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C237.6,218.4,236.2,219.8,234.5,219.8z"/>
+    		<path fill="#CEE0B5" d="M321.1,219.8h-71.7c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h71.7c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C324.2,218.4,322.8,219.8,321.1,219.8z"/>
+    	</g>
+    	<path fill="#CEE0B5" d="M167.4,268.6H74.8c-2.7,0-5-2.2-5-5v-57.9c0-2.7,2.2-5,5-5h92.6c2.7,0,5,2.2,5,5v57.9
+    		C172.3,266.3,170.1,268.6,167.4,268.6z"/>
+    	<g>
+    		<path fill="#CEE0B5" d="M115.2,304H75.7c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C118.4,302.6,117,304,115.2,304z"/>
+    		<path fill="#CEE0B5" d="M162.5,289.2H75.7c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C165.6,287.7,164.2,289.2,162.5,289.2z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M400.4,172.2H290.2c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C405.4,170,403.1,172.2,400.4,172.2z"/>
+    		<path fill="#D6D5D5" d="M341.7,148h-39.5c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C344.8,146.6,343.4,148,341.7,148z"/>
+    		<path fill="#D6D5D5" d="M388.9,133.2h-86.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C392,131.8,390.6,133.2,388.9,133.2z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M522.3,172.2H412.1c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C527.2,170,525,172.2,522.3,172.2z"/>
+    		<path fill="#D6D5D5" d="M463.5,148H424c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C466.6,146.6,465.2,148,463.5,148z"/>
+    		<path fill="#D6D5D5" d="M510.8,133.2H424c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C513.9,131.8,512.5,133.2,510.8,133.2z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M156.7,172.2H46.5c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C161.6,170,159.4,172.2,156.7,172.2z"/>
+    		<path fill="#D6D5D5" d="M97.9,148H58.4c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C101,146.6,99.6,148,97.9,148z"/>
+    		<path fill="#D6D5D5" d="M145.2,133.2H58.4c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C148.3,131.8,146.9,133.2,145.2,133.2z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M400.4,409.8H290.2c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C405.4,407.6,403.1,409.8,400.4,409.8z"/>
+    		<path fill="#D6D5D5" d="M341.7,385.6h-39.5c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C344.8,384.2,343.4,385.6,341.7,385.6z"/>
+    		<path fill="#D6D5D5" d="M388.9,370.8h-86.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C392,369.4,390.6,370.8,388.9,370.8z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M278.5,409.8H168.3c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C283.5,407.6,281.3,409.8,278.5,409.8z"/>
+    		<path fill="#D6D5D5" d="M219.8,385.6h-39.5c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C222.9,384.2,221.5,385.6,219.8,385.6z"/>
+    		<path fill="#D6D5D5" d="M267,370.8h-86.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1H267c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C270.1,369.4,268.7,370.8,267,370.8z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M522.3,409.8H412.1c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C527.2,407.6,525,409.8,522.3,409.8z"/>
+    		<path fill="#D6D5D5" d="M463.5,385.6H424c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C466.6,384.2,465.2,385.6,463.5,385.6z"/>
+    		<path fill="#D6D5D5" d="M510.8,370.8H424c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C513.9,369.4,512.5,370.8,510.8,370.8z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M156.7,409.8H46.5c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C161.6,407.6,159.4,409.8,156.7,409.8z"/>
+    		<path fill="#D6D5D5" d="M97.9,385.6H58.4c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C101,384.2,99.6,385.6,97.9,385.6z"/>
+    		<path fill="#D6D5D5" d="M145.2,370.8H58.4c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C148.3,369.4,146.9,370.8,145.2,370.8z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M400.4,484.3H290.2c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C405.4,482.1,403.1,484.3,400.4,484.3z"/>
+    		<path fill="#D6D5D5" d="M341.7,460.2h-39.5c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C344.8,458.7,343.4,460.2,341.7,460.2z"/>
+    		<path fill="#D6D5D5" d="M388.9,445.3h-86.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C392,443.9,390.6,445.3,388.9,445.3z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M278.5,484.3H168.3c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C283.5,482.1,281.3,484.3,278.5,484.3z"/>
+    		<path fill="#D6D5D5" d="M219.8,460.2h-39.5c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C222.9,458.7,221.5,460.2,219.8,460.2z"/>
+    		<path fill="#D6D5D5" d="M267,445.3h-86.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1H267c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C270.1,443.9,268.7,445.3,267,445.3z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M522.3,484.3H412.1c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C527.2,482.1,525,484.3,522.3,484.3z"/>
+    		<path fill="#D6D5D5" d="M463.5,460.2H424c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C466.6,458.7,465.2,460.2,463.5,460.2z"/>
+    		<path fill="#D6D5D5" d="M510.8,445.3H424c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C513.9,443.9,512.5,445.3,510.8,445.3z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M156.7,484.3H46.5c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C161.6,482.1,159.4,484.3,156.7,484.3z"/>
+    		<path fill="#D6D5D5" d="M97.9,460.2H58.4c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C101,458.7,99.6,460.2,97.9,460.2z"/>
+    		<path fill="#D6D5D5" d="M145.2,445.3H58.4c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C148.3,443.9,146.9,445.3,145.2,445.3z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M400.4,558.8H290.2c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C405.4,556.6,403.1,558.8,400.4,558.8z"/>
+    		<path fill="#D6D5D5" d="M341.7,534.7h-39.5c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C344.8,533.3,343.4,534.7,341.7,534.7z"/>
+    		<path fill="#D6D5D5" d="M388.9,519.8h-86.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C392,518.4,390.6,519.8,388.9,519.8z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M278.5,558.8H168.3c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C283.5,556.6,281.3,558.8,278.5,558.8z"/>
+    		<path fill="#D6D5D5" d="M219.8,534.7h-39.5c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C222.9,533.3,221.5,534.7,219.8,534.7z"/>
+    		<path fill="#D6D5D5" d="M267,519.8h-86.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1H267c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C270.1,518.4,268.7,519.8,267,519.8z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M522.3,558.8H412.1c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C527.2,556.6,525,558.8,522.3,558.8z"/>
+    		<path fill="#D6D5D5" d="M463.5,534.7H424c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C466.6,533.3,465.2,534.7,463.5,534.7z"/>
+    		<path fill="#D6D5D5" d="M510.8,519.8H424c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C513.9,518.4,512.5,519.8,510.8,519.8z"/>
+    	</g>
+    	<g>
+    		<path fill="#E6E6E5" d="M156.7,558.8H46.5c-2.7,0-5-2.2-5-5v-62.1c0-2.7,2.2-5,5-5h110.2c2.7,0,5,2.2,5,5v62.1
+    			C161.6,556.6,159.4,558.8,156.7,558.8z"/>
+    		<path fill="#D6D5D5" d="M97.9,534.7H58.4c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    			C101,533.3,99.6,534.7,97.9,534.7z"/>
+    		<path fill="#D6D5D5" d="M145.2,519.8H58.4c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1h86.8c1.7,0,3.1,1.4,3.1,3.1v2.5
+    			C148.3,518.4,146.9,519.8,145.2,519.8z"/>
+    	</g>
+    	<path fill="#CEE0B5" d="M219.8,148h-39.5c-1.7,0-3.1-1.4-3.1-3.1v-0.3c0-1.7,1.4-3.1,3.1-3.1h39.5c1.7,0,3.1,1.4,3.1,3.1v0.3
+    		C222.9,146.6,221.5,148,219.8,148z"/>
+    	<path fill="#CEE0B5" d="M267,133.2h-86.8c-1.7,0-3.1-1.4-3.1-3.1v-2.5c0-1.7,1.4-3.1,3.1-3.1H267c1.7,0,3.1,1.4,3.1,3.1v2.5
+    		C270.1,131.8,268.7,133.2,267,133.2z"/>
+    </g>
+    </svg>
+</div>
+
+
+</div>
+
+</section>
+<section>
+<h3>
+<a id="demos" class="anchor" href="#demos" aria-hidden="true"><span aria-hidden="true" ></span></a>Demos</h3>
+<p>Gridtab supports two layout modes grid and tab. By default, it uses the grid layout. Click any tab and resize the window to see how it works.</p>
+<h5>Grid Layout</h5>
+<dl class="gridtab-1">
+  <dt><img src="http://placehold.it/350x300?text=1"></dt>
+  <dd>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=2"></dt>
+  <dd>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=3"></dt>
+  <dd>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=4"></dt>
+  <dd>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=5"></dt>
+  <dd>5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=6"></dt>
+  <dd>6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=7"></dt>
+  <dd>7 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=8"></dt>
+  <dd>8 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=9"></dt>
+  <dd>9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=10"></dt>
+  <dd>10 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=11"></dt>
+  <dd>11 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt><img src="http://placehold.it/350x300?text=12"></dt>
+  <dd>12 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+</dl>
+
+<pre>
+<code class="language-javascript">
+  $('.gridtab-1').gridtab({
+      grid: 4,
+      tabPadding: 0,
+      borderWidth: 10,
+      contentPadding: 40,
+      responsive: [{
+          breakpoint: 767,
+          settings: {
+              grid: 3,
+              contentPadding: 20
+          }
+      }, {
+          breakpoint: 520,
+          settings: {
+              grid: 2
+          }
+      }]
+  });
+</code>
+</pre>
+<h5>Tab Layout</h5>
+
+<dl class="gridtab-2">
+  <dt>Tab 1</dt>
+  <dd>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 2</dt>
+  <dd>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 3</dt>
+  <dd>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 4</dt>
+  <dd>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 5</dt>
+  <dd>5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 6</dt>
+  <dd>6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 7</dt>
+  <dd>7 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 8</dt>
+  <dd>8 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 9</dt>
+  <dd>9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 10</dt>
+  <dd>10 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 11</dt>
+  <dd>11 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 12</dt>
+  <dd>12 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+</dl>
+<pre>
+<code class="language-javascript">
+  $('.gridtab-2').gridtab({
+      grid: 6,
+      layout: 'tab',
+      borderWidth: 3,
+      contentPadding: 40,
+      responsive: [{
+          breakpoint: 1024,
+          settings: {
+              grid: 4,
+          }
+      }, {
+          breakpoint: 767,
+          settings: {
+              grid: 3,
+              contentPadding: 20
+          }
+      }, {
+          breakpoint: 520,
+          settings: {
+              grid: 2
+          }
+      }]
+  });
+</code>
+</pre>
+</section>
+<section>
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" ></span></a>Usage</h3>
 
 <p>Setting up GridTab is really simple</p>
 
-<h3>
-<a id="html-markup" class="anchor" href="#html-markup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML Markup</h3>
+<h5>
+<a id="html-markup" class="anchor" href="#html-markup" aria-hidden="true"><span aria-hidden="true" ></span></a>HTML Markup</h5>
 
-<p>Your markup should look something like this</p>
+<p>Your markup should look something like this. It's a simple description list titles in <code class="language-markup">&lt;dt&gt;</code> tag and description or content to be shown on click in <code class="language-markup">&lt;dd&gt;</code> tag</p>
 
-<pre><code>&lt;dl id="gridtab-1"&gt;
+<pre><code class="language-markup">&lt;dl id="gridtab-1"&gt;
     &lt;dt&gt;Tab 1&lt;/dt&gt;
     &lt;dd&gt;Tab 1 Description&lt;/dd&gt;
     &lt;dt&gt;Tab 2&lt;/dt&gt;
     &lt;dd&gt;Tab 2 Description&lt;/dd&gt;
     &lt;dt&gt;Tab 3&lt;/dt&gt;
     &lt;dd&gt;Tab 3 Description&lt;/dd&gt;
-    &lt;dt&gt;Tab 4&lt;/dt&gt;
-    &lt;dd&gt;Tab 4 Description&lt;/dd&gt;
-    &lt;dt&gt;Tab 5&lt;/dt&gt;
-    &lt;dd&gt;Tab 5 Description&lt;/dd&gt;
-    &lt;dt&gt;Tab 6&lt;/dt&gt;
-    &lt;dd&gt;Tab 6 Description&lt;/dd&gt;
 &lt;/dl&gt;
 </code></pre>
 
-<p>Where, <code>&lt;dt&gt;</code> contains the title of the tab nad <code>&lt;dd&gt;</code> contains the description to be shown on click.</p>
+<h5>
+<a id="stylesheet" class="anchor" href="#stylesheet" aria-hidden="true"><span aria-hidden="true" ></span></a>Stylesheet</h5>
 
-<h3>
-<a id="stylesheet" class="anchor" href="#stylesheet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Stylesheet</h3>
+<p>Link the gridtab css file in your <code class="language-markup">&lt;head&gt;</code></p>
 
-<p>Just add a link to the css file in your </p>:
+<pre><code class="language-markup">&lt;link rel="stylesheet" type="text/css" href="gridtab.min.css"/&gt;</code></pre>
 
-<p><code>&lt;link rel="stylesheet" type="text/css" href="gridtab.min.css"/&gt;</code></p>
+<h5>
+<a id="javascript" class="anchor" href="#jquery-plugin" aria-hidden="true"><span aria-hidden="true" ></span></a>Javascript</h5>
 
-<h3>
-<a id="jquery-plugin" class="anchor" href="#jquery-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>jQuery Plugin</h3>
+<p>Include the gridtab js, ideally efore your closing <code>&lt;body&gt;</code> tag</p>
 
-<p>Then, before your closing <code>&lt;body&gt;</code> tag add:</p>
+<pre><code class="language-markup">&lt;script type="text/javascript" src="gridtab.min.js"&gt;&lt;/script&gt;</code></pre>
+<h5>
+<a id="initialization" class="anchor" href="#initialization" aria-hidden="true"><span aria-hidden="true" ></span></a>Initialization</h5>
 
-<p><code>&lt;script type="text/javascript" src="gridtab.min.js"&gt;&lt;/script&gt;</code></p>
+<p>Initialize the plugin as shown below:</p>
 
-<p>and initialize the plugin as shown below:</p>
-
-<pre><code>&lt;script&gt;
+<pre><code class="language-javascript">&lt;script&gt;
     $(document).ready(function() {
         $('#gridtab-1').gridtab({
             grid:3
@@ -95,9 +560,10 @@
 </code></pre>
 
 <p>Where grid is the number of grids/tabs in a row</p>
-
-<h2>
-<a id="settings" class="anchor" href="#settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Settings</h2>
+</section>
+<section>
+<h3>
+<a id="settings" class="anchor" href="#settings" aria-hidden="true"><span aria-hidden="true" ></span></a>Settings</h3>
 
 <table>
 <thead>
@@ -110,152 +576,170 @@
 </thead>
 <tbody>
 <tr>
-<td>grid</td>
-<td>integer</td>
-<td>4</td>
-<td>Number of grids or tabs per row</td>
+<td data-label="Option">grid</td>
+<td data-label="Type"> integer</td>
+<td data-label="Default"> 4</td>
+<td data-label="Description"> Number of grids or tabs per row</td>
 </tr>
 <tr>
-<td>borderWidth</td>
-<td>integer</td>
-<td>2</td>
-<td>Width of the borders</td>
+<td data-label="Option">borderWidth</td>
+<td data-label="Type"> integer</td>
+<td data-label="Default"> 2</td>
+<td data-label="Description"> Width of the borders</td>
 </tr>
 <tr>
-<td>tabBorderColor</td>
-<td>string</td>
-<td>'#ddd'</td>
-<td>border color of the tabs (Hex Color Code).</td>
+<td data-label="Option">tabBorderColor</td>
+<td data-label="Type">string</td>
+<td data-label="Default">'#ddd'</td>
+<td data-label="Description">border color of the tabs (Hex Color Code).</td>
 </tr>
 <tr>
-<td>tabPadding</td>
-<td>integer</td>
-<td>25</td>
-<td>padding/spacing around the tabs.</td>
+<td data-label="Option">tabPadding</td>
+<td data-label="Type"> integer</td>
+<td data-label="Default"> 25</td>
+<td data-label="Description"> padding/spacing around the tabs.</td>
 </tr>
 <tr>
-<td>contentBorderColor</td>
-<td>string</td>
-<td>'#ddd'</td>
-<td>border color of the content section (Hex Color Code).</td>
+<td data-label="Option">contentBorderColor</td>
+<td data-label="Type">string</td>
+<td data-label="Default">'#ddd'</td>
+<td data-label="Description">border color of the content section (Hex Color Code).</td>
 </tr>
 <tr>
-<td>contentPadding</td>
-<td>integer</td>
-<td>25</td>
-<td>padding/spacing around content section</td>
+<td data-label="Option">contentPadding</td>
+<td data-label="Type"> integer</td>
+<td data-label="Default"> 25</td>
+<td data-label="Description"> padding/spacing around content section</td>
 </tr>
 <tr>
-<td>contentBackground</td>
-<td>string</td>
-<td>'#fff'</td>
-<td>Background color for the content section (Hex Color Code).</td>
+<td data-label="Option">contentBackground</td>
+<td data-label="Type">string</td>
+<td data-label="Default">'#fff'</td>
+<td data-label="Description">Background color for the content section (Hex Color Code).</td>
 </tr>
 <tr>
-<td>activeTabBackground</td>
-<td>string</td>
-<td>'#fff'</td>
-<td>Background color for the active tab (Hex Color Code).</td>
+<td data-label="Option">activeTabBackground</td>
+<td data-label="Type">string</td>
+<td data-label="Default">'#fff'</td>
+<td data-label="Description">Background color for the active tab (Hex Color Code).</td>
 </tr>
 <tr>
-<td>keepOpen</td>
-<td>Boolean</td>
-<td>false</td>
-<td>If set to <code>true</code> keeps the active tab open (Disables toggle).</td>
+<td data-label="Option">keepOpen</td>
+<td data-label="Type"> Boolean</td>
+<td data-label="Default"> false</td>
+<td data-label="Description"> If set to <code>true</code> keeps the active tab open (Disables toggle).</td>
 </tr>
 <tr>
-<td>speed</td>
-<td>integer</td>
-<td>500</td>
-<td>Transition speed in milliseconds</td>
+<td data-label="Option">speed</td>
+<td data-label="Type"> integer</td>
+<td data-label="Default"> 500</td>
+<td data-label="Description"> Transition speed in milliseconds</td>
 </tr>
 <tr>
-<td>layout</td>
-<td>string</td>
-<td>'grid'</td>
-<td>Change the value to <code>'tab'</code> for a tab layout. By default, the layout is <code>'grid'</code> based.</td>
+<td data-label="Option">layout</td>
+<td data-label="Type">string</td>
+<td data-label="Default">'grid'</td>
+<td data-label="Description">Change the value to <code>'tab'</code> for a tab layout. By default, the layout is <code>'grid'</code> based.</td>
 </tr>
 <tr>
-<td>activeTab</td>
-<td>integer</td>
-<td>0</td>
-<td>Initially active tab. For example, <code>1</code> enables the first tab.</td>
+<td data-label="Option">activeTab</td>
+<td data-label="Type"> integer</td>
+<td data-label="Default"> 0</td>
+<td data-label="Description"> Initially active tab. For example, <code>1</code> enables the first tab.</td>
 </tr>
 <tr>
-<td>Responsive</td>
-<td>Array</td>
-<td>null</td>
-<td>Array of objects having breakpoints and <code>settings</code> object which is enabled at a given <code>breakpoint</code>.</td>
+<td data-label="Option">Responsive</td>
+<td data-label="Type">Array</td>
+<td data-label="Default">null</td>
+<td data-label="Description">Array of objects having breakpoints and <code>settings</code> object which is enabled at a given <code>breakpoint</code>.</td>
 </tr>
 <tr>
-<td>callbacks</td>
-<td>Object</td>
-<td>open:false, close:false</td>
-<td>Callbacks for the open and close states of the content section.</td>
+<td data-label="Option">callbacks</td>
+<td data-label="Type">Object</td>
+<td data-label="Default">open:false, close:false</td>
+<td data-label="Description">Callbacks for the open and close states of the content section.</td>
 </tr>
 </tbody>
 </table>
-
-<h3>
-<a id="responsive-example" class="anchor" href="#responsive-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Responsive Example</h3>
-
-<p>The responsive settings is where you reset the grids and other properties at a given breakpoint.</p>
-
-<pre><code>$('#gridtab-1').gridtab({
-    grid:5,
-    contentPadding: 40
-    responsive:[{
-        breakpoint: 1024,
-        settings:{
-            grid:3,
-            contentPadding: 30
-        }
-    },{
-        breakpoint:767,
-        settings:{
-            grid:2,
-            contentPadding: 25
-        }
-    },{
-        breakpoint:520,
-        settings:{
-            grid:1,
-            contentPadding: 20
-        }
-    }]
-});
-</code></pre>
-
-<p>The properties that can be changed with the responsive settings are: <code>borderWidth</code>, <code>tabPadding</code>, <code>tabBorderColor</code>, <code>contentBorderColor</code>, <code>contentPadding</code>, <code>contentBackground</code> and <code>activeTabBackground</code>.</p>
-
-<h2>
-<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h2>
-
-<p>1.0.0</p>
-
-<h2>
-<a id="browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Browser support</h2>
-
-<p>GridTab works on IE10+ in addition to other modern browsers like Chrome, Firefox and Safari</p>
-
-<h2>
-<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
-
-<p>jQuery 1.8.3 +</p>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
-
-<p>Licensed under the MIT license.</p>
-        </section>
+</section>
 
         <footer>
-          Gridtab is maintained by <a href="https://github.com/gopalraju">gopalraju</a><br>
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+          Gridtab is maintained by <a href="https://github.com/gopalraju">gopalraju</a>
         </footer>
+</div>
 
-        
       </div>
-    </div>
+      <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="scripts/prism.js"></script>
+      <script src="gridtab/gridtab.min.js"></script>
+      <script>
+      $(document).ready(function() {
+
+          $('.gridtab-1').gridtab({
+              grid: 4,
+              tabPadding: 0,
+              borderWidth: 10,
+              contentPadding: 40,
+              responsive: [{
+                  breakpoint: 767,
+                  settings: {
+                      grid: 3,
+                      contentPadding: 20
+                  }
+              }, {
+                  breakpoint: 520,
+                  settings: {
+                      grid: 2,
+                  }
+              }]
+          });
+
+          $('.gridtab-2').gridtab({
+              grid: 6,
+              layout: 'tab',
+              borderWidth: 3,
+              contentPadding: 40,
+              responsive: [{
+                  breakpoint: 1024,
+                  settings: {
+                      grid: 4,
+                  }
+              }, {
+                  breakpoint: 767,
+                  settings: {
+                      grid: 3,
+                      contentPadding: 20
+                  }
+              }, {
+                  breakpoint: 520,
+                  settings: {
+                      grid: 2
+                  }
+              }]
+          });
+
+
+          $("nav a").each(function() {
+
+            $(this).on('click', function(e) {
+
+              var href = $(this).attr("href");
+              if (/^#/.test(href) === true) {
+                e.preventDefault();
+                scrollToAnchor($(this).attr('href'));
+              }
+            });
+
+          });
+
+        });
+
+        function scrollToAnchor(aid) {
+          var aTag = $(aid);
+          $('html,body').animate({
+            scrollTop: aTag.offset().top - 20
+          }, 'slow');
+        }
+        </script>
   </body>
 </html>
