@@ -79,7 +79,7 @@ The responsive settings is where you reset the grids and other properties at a g
 ```
 $('#gridtab-1').gridtab({
 	grid:5,
-	contentPadding: 40
+	contentPadding: 40,
 	responsive:[{
 		breakpoint: 1024,
 		settings:{
