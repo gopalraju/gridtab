@@ -1,7 +1,7 @@
 # GridTab jQuery Plugin #
 
 
-**GridTab** is a lightweight jQuery plugin to create grid based responsive tabs.
+**GridTab** is a lightweight jQuery plugin to create grid based responsive tabs. With version 2.0.0, gridtab supports nested tabs.
 
 ## Demo ##
 
@@ -56,22 +56,40 @@ and initialize the plugin as shown below:
 Where grid is the number of grids/tabs in a row
 
 ## Settings ##
-| Option             | Type          | Default  | Description |
-| -------------      | ------------- | -------- | ----------- |
-| grid               | integer       |  4       | Number of grids or tabs per row |
-| borderWidth        | integer       |  2       | Width of the borders            |
-| tabBorderColor     | string        | '#ddd'   | border color of the tabs (Hex Color Code).|
-| tabPadding         | integer       | 25       | padding/spacing around the tabs.
-| contentBorderColor | string        | '#ddd'   | border color of the content section (Hex Color Code).|
-| contentPadding     | integer       | 25       | padding/spacing around content section|
-| contentBackground  | string        | '#fff'   | Background color for the content section (Hex Color Code).|
-| activeTabBackground| string        | '#fff'   | Background color for the active tab (Hex Color Code).|
-| keepOpen           | Boolean       |  false   | If set to `true` keeps the active tab open (Disables toggle).|
-| speed              | integer       |  500     | Transition speed in milliseconds|
-| layout             | string        |  'grid'  | Change the value to `'tab'` for a tab layout. By default, the layout is `'grid'` based.|
-| activeTab          | integer       |  0       | Initially active tab. For example, `1` enables the first tab.|
-| Responsive         | Array         |  null    | Array of objects having breakpoints and `settings` object which is enabled at a given `breakpoint`.|
-| callbacks          | Object        |  open:false, close:false| Callbacks for the open and close states of the content section.|
+| Basic Settings     | Type          | Default                            | Description |
+| -------------      | ------------- | --------                           | ----------- |
+| grid               | integer       |  `4`                               | Number of grids or tabs per row |
+| borderWidth        | integer       |  `2`                               | Width of the borders.|
+| tabBorderColor     | string        | `'#ddd'`                           | border color of the tabs (Hex Color Code).|
+| tabPadding         | integer       | `25`                               | padding/spacing around the tabs.
+| contentBorderColor | string        | `'#ddd'`                           | border color of the content section (Hex Color Code).|
+| contentPadding     | integer       | `25`                               | padding/spacing around content section.|
+| contentBackground  | string        | `'#fff'`                           | Background color for the content section (Hex Color Code).|
+| activeTabBackground| string        | `'#fff'`                           | Background color for the active tab (Hex Color Code).|
+| responsive         | Array         |  `null`                            | Array of objects having breakpoints and `settings` object which is enabled at a given `breakpoint`.|
+| selectors          | Object        |  see table below                   | Object with options to set custom selectors.|
+| config             | Object        |  see table below                   | Object with options to enable features like, setting initially active tab, next/prev controls, close button, transition speed etc.|
+| callbacks          | Object        |  `open:false, close:false`         | Callbacks for the open and close states of the content section.|
+
+
+| selectors     		 | Type          | Default                            | Description |
+| -------------      | ------------- | --------                           | ----------- |
+| tab           		 | string        |  `'> dt'`                          | By default, the click event is triggered on the entire tab (`'dt'`). This can be replaced with any custom selector within the `dt`. For example: `'.readmore'`.|
+| closeButton        | string        |  `'.gridtab__close'`               | Custom class for the close button, if `'showClose'` is set to `true`.|
+| nextArrow          | string        |  `'.gridtab__next.gridtab__arrow'` | Custom class for the next button, if `'showArrows'` is set to `true`. |
+| prevArrow          | string        |  `'.gridtab__prev.gridtab__arrow'` | Custom class for the prev button, if `'showArrows'` is set to `true`. |
+| disabledArrow      | string        |  `'.is-disabled'`                  | Custom class for the disabled state of next/prev buttons, if `'showArrows'` is set to `true`. |
+
+| config     	     	 | Type          | Default                            | Description |
+| -------------      | ------------- | --------                           | ----------- |
+| layout             | string        |  `'grid'`                          | Change the value to `'tab'` for a tab layout. By default, the layout is `'grid'` based. |
+| keepOpen           | Boolean       |  `false`                           | If set to `true` keeps the active tab open (Disables toggle).|
+| speed              | integer       |  `500`                             | Transition speed in milliseconds.|
+| activeTab          | integer       |  `0`                               | Initially active tab. For example, `1` enables the first tab.|
+| showClose          | Boolean       |  `false`                           | Shows the close button if set to `true`.|
+| showArrows         | Boolean       |  `false`                           | Shows the next/prev buttons if set to `true`.|
+| scrollToTab        | Boolean       |  `false`                           | Scrolls to the active tab on click|
+
 
 ### Responsive Example ###
 The responsive settings is where you reset the grids and other properties at a given breakpoint.
@@ -101,10 +119,11 @@ $('#gridtab-1').gridtab({
 	}]
 });
 ```
-The properties that can be changed with the responsive settings are: `borderWidth`, `tabPadding`, `tabBorderColor`, `contentBorderColor`, `contentPadding`, `contentBackground` and `activeTabBackground`.
+All properties under basic settings like: `borderWidth`, `tabPadding`, `tabBorderColor`, `contentBorderColor`, `contentPadding`, `contentBackground` and `activeTabBackground`, can be updated with the responsive settings.
+
 ## Version ##
 
-1.0.0
+2.0.0
 ## Browser support ##
 
 GridTab works on IE10+ in addition to other modern browsers like Chrome, Firefox and Safari
