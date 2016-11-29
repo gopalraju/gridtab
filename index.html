@@ -84,14 +84,7 @@ PLUGIN</span>
       </div>
 
         <div class="container">
-        <!-- <section id="downloads" class="clearfix">
-          <a href="https://github.com/gopalraju/gridtab/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/gopalraju/gridtab/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/gopalraju/gridtab" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
 
-        <hr>
- -->
 <section>
           <h3>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" ></span></a>Features</h3>
@@ -99,7 +92,7 @@ PLUGIN</span>
 
 <ul class="l-list">
   <li>Fully responsive</li>
-  <li>Lightweight and works on CSS3 flexbox</li>
+  <li>Lightweight and is based on CSS3 flexbox</li>
   <li>Seperate settings for every breakpoint</li>
   <li>Switch between Grid and Tab layout</li>
 </ul>
@@ -492,6 +485,9 @@ PLUGIN</span>
       layout: 'tab',
       borderWidth: 3,
       contentPadding: 40,
+      config:{
+        layout:'tab'
+      },
       responsive: [{
           breakpoint: 1024,
           settings: {
@@ -512,7 +508,172 @@ PLUGIN</span>
   });
 </code>
 </pre>
+
+
+<h5>Initially active &amp; nested tabs</h5>
+
+<dl class="gridtab-3">
+  <dt>Tab 1</dt>
+  <dd>
+    <span>This is an initially active tab, holding another gridtab. GridTab supports nested tabs.</span><br/><br/>
+    <dl class="gridtab-4">
+      <dt><img src="http://placehold.it/350x300?text=1"></dt>
+      <dd>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+      <dt><img src="http://placehold.it/350x300?text=2"></dt>
+      <dd>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+      <dt><img src="http://placehold.it/350x300?text=3"></dt>
+      <dd>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+      <dt><img src="http://placehold.it/350x300?text=4"></dt>
+      <dd>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+      <dt><img src="http://placehold.it/350x300?text=5"></dt>
+      <dd>5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+      <dt><img src="http://placehold.it/350x300?text=6"></dt>
+      <dd>6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+    </dl>
+  </dd>
+  <dt>Tab 2</dt>
+  <dd>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 3</dt>
+  <dd>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 4</dt>
+  <dd>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+</dl>
+<pre>
+<code class="language-javascript">
+  $('.gridtab-3').gridtab({
+      grid: 4,
+      borderWidth: 3,
+      contentPadding: 40,
+      config:{
+        layout: 'tab',
+        activeTab:1
+      },
+      responsive: [{
+          breakpoint: 600,
+          settings: {
+              grid: 2,
+              contentPadding: 30
+          }
+      }]
+  });
+</code>
+</pre>
+<h5>Keep open,controls and scroll to tab</h5>
+
+<dl class="gridtab-5">
+  <dt>Tab 1</dt>
+  <dd>keepOpen, if set to true, ensures the tab doesn't slide up on second click. Gridtab also has the option to enable next/prev/close controls and  scroll to active tab.</dd>
+  <dt>Tab 2</dt>
+  <dd>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 3</dt>
+  <dd>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 4</dt>
+  <dd>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+</dl>
+<pre>
+<code class="language-javascript">
+  $('.gridtab-5').gridtab({
+      grid: 4,
+      borderWidth: 3,
+      contentPadding: 40,
+      config:{
+        layout: 'tab',
+        activeTab:1,
+        keepOpen:true,
+        showClose:true,
+        showArrows:true,
+        scrollToTab:true
+      },
+      responsive: [{
+          breakpoint: 600,
+          settings: {
+              grid: 2,
+              contentPadding: 30
+          }
+      }]
+  });
+</code>
+</pre>
+
+<h5>Custom Selectors</h5>
+<dl class="gridtab-6">
+  <dt>
+    <img src="http://placehold.it/350x300?text=1">
+    <div>This is a short description</div>
+    <a href="#" class="readmore">Custom Selector</a>
+  </dt>
+  <dd>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>
+    <img src="http://placehold.it/350x300?text=2">
+    <div>This is a short description</div>
+    <a href="#" class="readmore">Custom Selector</a>
+  </dt>
+  <dd>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>
+    <img src="http://placehold.it/350x300?text=3">
+    <div>This is a short description</div>
+    <a href="#" class="readmore">Custom Selector</a>
+  </dt>
+  <dd>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>
+    <img src="http://placehold.it/350x300?text=4">
+    <div>This is a short description</div>
+    <a href="#" class="readmore">Custom Selector</a>
+  </dt>
+  <dd>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>
+    <img src="http://placehold.it/350x300?text=5">
+    <div>This is a short description</div>
+    <a href="#" class="readmore">Custom Selector</a>
+  </dt>
+  <dd>5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>
+    <img src="http://placehold.it/350x300?text=6">
+    <div>This is a short description</div>
+    <a href="#" class="readmore">Custom Selector</a>
+  </dt>
+  <dd>6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+</dl>
+<pre>
+<code class="language-javascript">
+  $('.gridtab-6').gridtab({
+      grid: 3,
+      borderWidth: 3,
+      tabPadding:10,
+      contentPadding: 40,
+      config:{
+        showClose:true,
+        showArrows:true,
+        layout:'tab'
+      },
+      selectors:{
+        tab:'.readmore',
+        closeButton: '.closeBtn',
+        nextArrow: '.nextBtn',
+        prevArrow: '.prevBtn',
+        disabledArrow: '.disabledBtn'
+      },
+      responsive: [{
+          breakpoint: 600,
+          settings: {
+              grid: 2,
+              contentPadding: 20
+          }
+      }, {
+          breakpoint: 320,
+          settings: {
+              grid: 1
+          }
+      }]
+
+  });
+</code>
+</pre>
+
 </section>
+
+
+
 <section>
 <h3>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" ></span></a>Usage</h3>
@@ -567,102 +728,183 @@ PLUGIN</span>
 <h3>
 <a id="settings" class="anchor" href="#settings" aria-hidden="true"><span aria-hidden="true" ></span></a>Settings</h3>
 
-<table>
-<thead>
+<table><thead>
 <tr>
-<th>Option</th>
+<th>Basic Settings</th>
 <th>Type</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
-</thead>
-<tbody>
+</thead><tbody>
 <tr>
-<td data-label="Option">grid</td>
-<td data-label="Type"> integer</td>
-<td data-label="Default"> 4</td>
-<td data-label="Description"> Number of grids or tabs per row</td>
+<td data-label="Basic Settings">grid</td>
+<td data-label="Type">integer</td>
+<td data-label="Default"><code>4</code></td>
+<td data-label="Description">Number of grids or tabs per row</td>
 </tr>
 <tr>
-<td data-label="Option">borderWidth</td>
-<td data-label="Type"> integer</td>
-<td data-label="Default"> 2</td>
-<td data-label="Description"> Width of the borders</td>
+<td data-label="Basic Settings">borderWidth</td>
+<td data-label="Type">integer</td>
+<td data-label="Default"><code>2</code></td>
+<td data-label="Description">Width of the borders.</td>
 </tr>
 <tr>
-<td data-label="Option">tabBorderColor</td>
+<td data-label="Basic Settings">tabBorderColor</td>
 <td data-label="Type">string</td>
-<td data-label="Default">'#ddd'</td>
+<td data-label="Default"><code>'#ddd'</code></td>
 <td data-label="Description">border color of the tabs (Hex Color Code).</td>
 </tr>
 <tr>
-<td data-label="Option">tabPadding</td>
-<td data-label="Type"> integer</td>
-<td data-label="Default"> 25</td>
-<td data-label="Description"> padding/spacing around the tabs.</td>
+<td data-label="Basic Settings">tabPadding</td>
+<td data-label="Type">integer</td>
+<td data-label="Default"><code>25</code></td>
+<td data-label="Description">padding/spacing around the tabs.</td>
 </tr>
 <tr>
-<td data-label="Option">contentBorderColor</td>
+<td data-label="Basic Settings">contentBorderColor</td>
 <td data-label="Type">string</td>
-<td data-label="Default">'#ddd'</td>
+<td data-label="Default"><code>'#ddd'</code></td>
 <td data-label="Description">border color of the content section (Hex Color Code).</td>
 </tr>
 <tr>
-<td data-label="Option">contentPadding</td>
-<td data-label="Type"> integer</td>
-<td data-label="Default"> 25</td>
-<td data-label="Description"> padding/spacing around content section</td>
+<td data-label="Basic Settings">contentPadding</td>
+<td data-label="Type">integer</td>
+<td data-label="Default"><code>25</code></td>
+<td data-label="Description">padding/spacing around content section.</td>
 </tr>
 <tr>
-<td data-label="Option">contentBackground</td>
+<td data-label="Basic Settings">contentBackground</td>
 <td data-label="Type">string</td>
-<td data-label="Default">'#fff'</td>
+<td data-label="Default"><code>'#fff'</code></td>
 <td data-label="Description">Background color for the content section (Hex Color Code).</td>
 </tr>
 <tr>
-<td data-label="Option">activeTabBackground</td>
+<td data-label="Basic Settings">activeTabBackground</td>
 <td data-label="Type">string</td>
-<td data-label="Default">'#fff'</td>
+<td data-label="Default"><code>'#fff'</code></td>
 <td data-label="Description">Background color for the active tab (Hex Color Code).</td>
 </tr>
 <tr>
-<td data-label="Option">keepOpen</td>
-<td data-label="Type"> Boolean</td>
-<td data-label="Default"> false</td>
-<td data-label="Description"> If set to <code>true</code> keeps the active tab open (Disables toggle).</td>
-</tr>
-<tr>
-<td data-label="Option">speed</td>
-<td data-label="Type"> integer</td>
-<td data-label="Default"> 500</td>
-<td data-label="Description"> Transition speed in milliseconds</td>
-</tr>
-<tr>
-<td data-label="Option">layout</td>
-<td data-label="Type">string</td>
-<td data-label="Default">'grid'</td>
-<td data-label="Description">Change the value to <code>'tab'</code> for a tab layout. By default, the layout is <code>'grid'</code> based.</td>
-</tr>
-<tr>
-<td data-label="Option">activeTab</td>
-<td data-label="Type"> integer</td>
-<td data-label="Default"> 0</td>
-<td data-label="Description"> Initially active tab. For example, <code>1</code> enables the first tab.</td>
-</tr>
-<tr>
-<td data-label="Option">Responsive</td>
+<td data-label="Basic Settings">responsive</td>
 <td data-label="Type">Array</td>
-<td data-label="Default">null</td>
+<td data-label="Default"><code>null</code></td>
 <td data-label="Description">Array of objects having breakpoints and <code>settings</code> object which is enabled at a given <code>breakpoint</code>.</td>
 </tr>
 <tr>
-<td data-label="Option">callbacks</td>
+<td data-label="Basic Settings">selectors</td>
 <td data-label="Type">Object</td>
-<td data-label="Default">open:false, close:false</td>
+<td data-label="Default">see table below</td>
+<td data-label="Description">Object with options to set custom selectors.</td>
+</tr>
+<tr>
+<td data-label="Basic Settings">config</td>
+<td data-label="Type">Object</td>
+<td data-label="Default">see table below</td>
+<td data-label="Description">Object with options to enable features like, setting initially active tab, next/prev controls, close button, transition speed etc.</td>
+</tr>
+<tr>
+<td data-label="Basic Settings">callbacks</td>
+<td data-label="Type">Object</td>
+<td data-label="Default"><code>open:false, close:false</code></td>
 <td data-label="Description">Callbacks for the open and close states of the content section.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
+<h5>Selectors</h5>
+
+<table><thead>
+<tr>
+<th>selectors</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td data-label="Selectors">tab</td>
+<td data-label="Type">string</td>
+<td data-label="Default"><code>'&gt; dt'</code></td>
+<td data-label="Description">By default, the click event is triggered on the entire tab (<code>'dt'</code>). This can be replaced with any custom selector within the <code>dt</code>. For example: <code>'.readmore'</code>.</td>
+</tr>
+<tr>
+<td data-label="Selectors">closeButton</td>
+<td data-label="Type">string</td>
+<td data-label="Default"><code>'.gridtab__close'</code></td>
+<td data-label="Description">Custom class for the close button, if <code>'showClose'</code> is set to <code>true</code>.</td>
+</tr>
+<tr>
+<td data-label="Selectors">nextArrow</td>
+<td data-label="Type">string</td>
+<td data-label="Default"><code>'.gridtab__next.gridtab__arrow'</code></td>
+<td data-label="Description">Custom class for the next button, if <code>'showArrows'</code> is set to <code>true</code>.</td>
+</tr>
+<tr>
+<td data-label="Selectors">prevArrow</td>
+<td data-label="Type">string</td>
+<td data-label="Default"><code>'.gridtab__prev.gridtab__arrow'</code></td>
+<td data-label="Description">Custom class for the prev button, if <code>'showArrows'</code> is set to <code>true</code>.</td>
+</tr>
+<tr>
+<td data-label="Selectors">disabledArrow</td>
+<td data-label="Type">string</td>
+<td data-label="Default"><code>'.is-disabled'</code></td>
+<td data-label="Description">Custom class for the disabled state of next/prev buttons, if <code>'showArrows'</code> is set to <code>true</code>.</td>
+</tr>
+</tbody></table>
+
+<h5>Configuration</h5>
+
+<table><thead>
+<tr>
+<th>config</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td data-label="Config">layout</td>
+<td data-label="Type">string</td>
+<td data-label="Default"><code>'grid'</code></td>
+<td data-label="Description">Change the value to <code>'tab'</code> for a tab layout. By default, the layout is <code>'grid'</code> based.</td>
+</tr>
+<tr>
+<td data-label="Config">keepOpen</td>
+<td data-label="Type">Boolean</td>
+<td data-label="Default"><code>false</code></td>
+<td data-label="Description">If set to <code>true</code> keeps the active tab open (Disables toggle).</td>
+</tr>
+<tr>
+<td data-label="Config">speed</td>
+<td data-label="Type">integer</td>
+<td data-label="Default"><code>500</code></td>
+<td data-label="Description">Transition speed in milliseconds.</td>
+</tr>
+<tr>
+<td data-label="Config">activeTab</td>
+<td data-label="Type">integer</td>
+<td data-label="Default"><code>0</code></td>
+<td data-label="Description">Initially active tab. For example, <code>1</code> enables the first tab.</td>
+</tr>
+<tr>
+<td data-label="Config">showClose</td>
+<td data-label="Type">Boolean</td>
+<td data-label="Default"><code>false</code></td>
+<td data-label="Description">Shows the close button if set to <code>true</code>.</td>
+</tr>
+<tr>
+<td data-label="Config">showArrows</td>
+<td data-label="Type">Boolean</td>
+<td data-label="Default"><code>false</code></td>
+<td data-label="Description">Shows the next/prev buttons if set to <code>true</code>.</td>
+</tr>
+<tr>
+<td data-label="Config">scrollToTab</td>
+<td data-label="Type">Boolean</td>
+<td data-label="Default"><code>false</code></td>
+<td data-label="Description">Scrolls to the active tab on click</td>
+</tr>
+</tbody></table>
+
 </section>
 
         <footer>
@@ -701,6 +943,9 @@ PLUGIN</span>
               layout: 'tab',
               borderWidth: 3,
               contentPadding: 40,
+              config:{
+                layout:'tab'
+              },
               responsive: [{
                   breakpoint: 1024,
                   settings: {
@@ -719,29 +964,138 @@ PLUGIN</span>
                   }
               }]
           });
+          $('.gridtab-3').gridtab({
+              grid: 4,
+              borderWidth: 3,
+              contentPadding: 40,
+              config:{
+                layout: 'tab',
+                activeTab:1
+              },
+              responsive: [{
+                  breakpoint: 600,
+                  settings: {
+                      grid: 2,
+                      contentPadding: 30
+                  }
+              }]
+          });
+          $('.gridtab-4').gridtab({
+              grid: 6,
+              borderWidth: 3,
+              tabPadding:0,
+              contentPadding: 40,
+              responsive: [{
+                  breakpoint: 767,
+                  settings: {
+                      grid: 3,
+                      contentPadding: 20
+                  }
+              }, {
+                  breakpoint: 520,
+                  settings: {
+                      grid: 2
+                  }
+              }]
+
+          });
+          $('.gridtab-5').gridtab({
+              grid: 4,
+              borderWidth: 3,
+              contentPadding: 40,
+              config:{
+                layout: 'tab',
+                activeTab:1,
+                keepOpen:true,
+                showClose:true,
+                showArrows:true,
+                scrollToTab:true
+              },
+              responsive: [{
+                  breakpoint: 600,
+                  settings: {
+                      grid: 2,
+                      contentPadding: 30
+                  }
+              }]
+          });
+
+          $('.gridtab-6').gridtab({
+              grid: 3,
+              borderWidth: 3,
+              tabPadding:10,
+              contentPadding: 40,
+              config:{
+                showClose:true,
+                showArrows:true,
+                layout:'tab'
+              },
+              selectors:{
+                tab:'.readmore',
+                closeButton: '.closeBtn',
+                nextArrow: '.nextBtn',
+                prevArrow: '.prevBtn',
+                disabledArrow: '.disabledBtn'
+              },
+              responsive: [{
+                  breakpoint: 600,
+                  settings: {
+                      grid: 2,
+                      contentPadding: 20
+                  }
+              }, {
+                  breakpoint: 320,
+                  settings: {
+                      grid: 1
+                  }
+              }]
+
+          });
+          onScroll();
+
+          $(document).on("scroll", onScroll);
+
+          $('header nav a[href^="#"]').on('click', function (e) {
+            e.preventDefault();
 
 
-          $("nav a").each(function() {
+            $('header nav a').each(function () {
+              $(this).removeClass('is-active');
+            })
+            $(this).addClass('is-active');
 
-            $(this).on('click', function(e) {
-
-              var href = $(this).attr("href");
-              if (/^#/.test(href) === true) {
-                e.preventDefault();
-                scrollToAnchor($(this).attr('href'));
-              }
+            var target = this.hash;
+            $target = $(target);
+            $('html, body').stop().animate({
+              'scrollTop': $target.offset().top-$('header > nav').height() - 29
+            }, 1000, 'swing', function () {
+              window.location.hash = target;
+              $(document).off("scroll");
+              $(document).on("scroll", onScroll);
             });
-
           });
 
         });
 
-        function scrollToAnchor(aid) {
-          var aTag = $(aid);
-          $('html,body').animate({
-            scrollTop: aTag.offset().top - 20
-          }, 'slow');
-        }
+          function onScroll(event){
+  				var scrollPosition = $(document).scrollTop(),
+           header = $('header > nav');
+
+          if (scrollPosition >= $('header').height()-header.height()) header.addClass('is-fixed');
+          else header.removeClass('is-fixed');
+
+  				$('header nav a').each(function () {
+  					var currentLink = $(this);
+  					var refElement = $(currentLink.attr("href"));
+  					if (refElement.position().top - header.height() -30 <= scrollPosition && refElement.position().top + refElement.parents('section').height() > scrollPosition) {
+  						$('header nav a').removeClass ("is-active");
+  						currentLink.addClass("is-active");
+  					}
+  					else{
+  						currentLink.removeClass("is-active");
+  					}
+  				});
+  			}
         </script>
   </body>
 </html>
