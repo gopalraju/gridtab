@@ -1,5 +1,5 @@
 /*
-  Version: 2.0.0
+  Version: 2.0.1
   Author: Gopal Raju
   Website: http://www.productivedreams.com
   Docs: https://gopalraju.github.io/gridtab

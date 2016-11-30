@@ -123,7 +123,7 @@ All properties under basic settings like: `borderWidth`, `tabPadding`, `tabBorde
 
 ## Version ##
 
-2.0.0
+2.0.1
 ## Browser support ##
 
 GridTab works on IE10+ in addition to other modern browsers like Chrome, Firefox and Safari
