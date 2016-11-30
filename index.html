@@ -1092,6 +1092,8 @@ PLUGIN</span>
 
           if (scrollPosition >= $('header').height()-header.height()) header.addClass('is-fixed');
           else header.removeClass('is-fixed');
+          if (scrollPosition >= $('header').height()-header.height()+80) header.addClass('is-short');
+          else header.removeClass('is-short');
 
   				$('header nav a').each(function () {
   					var currentLink = $(this);
