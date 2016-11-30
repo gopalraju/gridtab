@@ -131,11 +131,11 @@
         e.preventDefault();
         var currIndex = _.contents.index($(this).parent().parent());
         //If clicked item is prev arrow, slide the prev content
-        if ($(this).hasClass('gridtab__prev')) {
+        if ($(this).hasClass(prevArrow)) {
           _.slideContent(_.tabs[currIndex - 1], false, _.options.config.scrollToTab);
         }
         //else if next arrow, slide the next
-        else if ($(this).hasClass('gridtab__next')) {
+        else if ($(this).hasClass(nextArrow)) {
           _.slideContent(_.tabs[currIndex + 1], false, _.options.config.scrollToTab);
         }
         //else it's a close button
@@ -158,7 +158,7 @@
     for (var i = 0; i < rowCount; i++) {
       //Select first n elements, second n elements etc and set order
       var j = i + 1;
-      _.contents.slice(i * grid, grid * j).css('order', '' + (j * grid));
+      _.contents.slice(i * grid, grid * j).css({'order': '' + (j * grid), 'flex-order': '' + (j * grid)});
     }
   };
   /**
@@ -168,7 +168,7 @@
     var _ = this;
     //Iterate through each tab and set flex order for each tab
     _.tabs.each(function(i) {
-      $(this).css('order', '' + i);
+      $(this).css({'order': '' + i, 'flex-order':'' + i});
     });
   };
   /**
@@ -186,7 +186,7 @@
         //Tab Styles
         cssRules += '.gridtab--' + instanceCount + ' > dt{';
         (borderWidth !== null) && (cssRules += 'margin:-' + borderWidth + 'px 0 0 -' + borderWidth + 'px;');
-        (grid !== null) && (cssRules += 'min-width:calc(' + tabWidth + '% + ' + borderWidth + 'px);flex-basis:' + tabWidth + '%;-ms-flex-basis:' + tabWidth + '%;');
+        (grid !== null) && (cssRules += 'min-width:calc(' + tabWidth + '% + ' + borderWidth + 'px);width:calc(' + tabWidth + '% + ' + borderWidth + 'px);');
         (borderWidth !== null) && (cssRules += 'border-width:' + borderWidth + 'px;');
         (tabPadding !== null) && (cssRules += 'padding:' + tabPadding + 'px;');
         (tabBorderColor !== null) && (cssRules += 'border-color:' + tabBorderColor + ';');
@@ -198,7 +198,7 @@
       //Content Styles
       if (contentBorderColor !== null || borderWidth !== null || contentBackground !== null || contentPadding !== null) {
         cssRules += '.gridtab--' + instanceCount + '>dd{';
-        cssRules += 'min-width:calc(' + (tabWidth * grid) + '% + ' + borderWidth + 'px);';
+        cssRules += 'min-width:calc(' + (tabWidth * grid) + '% + ' + borderWidth + 'px);max-width:calc(' + (tabWidth * grid) + '% + ' + borderWidth + 'px);';
         (borderWidth !== null) && (cssRules += 'margin:-' + borderWidth + 'px 0 0 -' + borderWidth + 'px !important;border-width:' + borderWidth + 'px;');
         (contentBorderColor !== null) && (cssRules += 'border-color:' + contentBorderColor + ';');
         (contentPadding !== null) && (cssRules += 'padding:' + contentPadding + 'px;');
