@@ -1,5 +1,5 @@
 /*
-  Version: 2.0.1
+  Version: 2.1.1
   Author: Gopal Raju
   Website: http://www.productivedreams.com
   Docs: https://gopalraju.github.io/gridtab
@@ -36,7 +36,8 @@
         activeTab: 0,
         showClose: false,
         showArrows: false,
-        scrollToTab:false
+        scrollToTab:false,
+        rtl:false
       },
       callbacks: {
         open: false,
@@ -67,14 +68,12 @@
   Gridtab.prototype.init = function() {
     var _ = this;
     $(_.element).addClass('gridtab gridtab--' + instanceCount);
+    (_.options.config.rtl) && ($(_.element).attr('dir','rtl'));
     _.setTabOrder();
     _.showControls();
     _.addCssRules(_.options.grid, _.options.borderWidth, _.options.tabPadding, _.options.tabBorderColor, _.options.contentPadding, _.options.contentBorderColor, _.options.contentBackground, _.options.activeTabBackground, null);
-    if (_.options.responsive !== null) {
-      _.responsiveBreakpoints();
-    } else {
-      _.setContentOrder(_.options.grid);
-    }
+    (_.options.responsive !== null) ? _.responsiveBreakpoints() : _.setContentOrder(_.options.grid);
+
 
     //If activeTab value exists and is less than total number of tabs
     if (_.activeTab > -1 && _.activeTab < _.tabs.length) {

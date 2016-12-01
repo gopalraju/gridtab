@@ -1,6 +1,6 @@
 {
   "name": "gridtab",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "description": "jQuery plugin to create grid based responsive tabs",
   "main": "gridtab/gridtab.js",
   "repository": {

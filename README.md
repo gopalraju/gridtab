@@ -1,12 +1,22 @@
 # GridTab jQuery Plugin #
 
 
-**GridTab** is a lightweight jQuery plugin to create grid based responsive tabs. With version 2.0.0, gridtab supports nested tabs.
+**GridTab** is a lightweight jQuery plugin to create grid based responsive tabs.
 
 ## Demo ##
 
 [http://gopalraju.github.io/gridtab](http://gopalraju.github.io/gridtab)
 
+## Features ##
+
+* Responsive
+* Lightweight and based on CSS3 flexbox
+* Set Grid for each breakpoint
+* Switch between Grid and Tab layout
+* Next, previous and close controls
+* Scroll to current tab
+* Custom selectors
+* Right-To-Left Support
 
 ## Usage ##
 
@@ -123,7 +133,7 @@ All properties under basic settings like: `borderWidth`, `tabPadding`, `tabBorde
 
 ## Version ##
 
-2.0.1
+2.1.1
 ## Browser support ##
 
 GridTab works on IE10+ in addition to other modern browsers like Chrome, Firefox and Safari

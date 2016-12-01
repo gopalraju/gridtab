@@ -1,4 +1,4 @@
-/* GridTab v2.0.0*/
+/* GridTab v2.1.1*/
 
 .gridtab,
 .gridtab>dt,
@@ -38,6 +38,12 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex
+}
+.gridtab>dd>.gridtab__controls>.gridtab__close {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    margin-left: 1px
 }
 .gridtab>dd>.gridtab__controls>.gridtab__close:before,
 .gridtab>dd>.gridtab__controls>.gridtab__close:after {
@@ -114,5 +120,22 @@
 }
 .gridtab>dt>img {
     max-width: 100%;
-    float: left
+    float: left;
+    height: auto
+}
+.gridtab[dir="rtl"]>dd>.gridtab__controls {
+    right: auto;
+    left: 5px
+}
+.gridtab[dir="rtl"]>dd>.gridtab__controls>.gridtab__next {
+    -webkit-transform: none;
+    transform: none
+}
+.gridtab[dir="rtl"]>dd>.gridtab__controls>.gridtab__prev {
+    -webkit-transform: scale(-1);
+    transform: scale(-1)
+}
+.gridtab[dir="rtl"]>dd>.gridtab__controls>.gridtab__close {
+    margin-right: 1px;
+    margin-left: 0
 }
