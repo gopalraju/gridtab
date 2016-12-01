@@ -99,6 +99,7 @@ Where grid is the number of grids/tabs in a row
 | showClose          | Boolean       |  `false`                           | Shows the close button if set to `true`.|
 | showArrows         | Boolean       |  `false`                           | Shows the next/prev buttons if set to `true`.|
 | scrollToTab        | Boolean       |  `false`                           | Scrolls to the active tab on click|
+| RTL        | Boolean       |  `false`                           | Converts tab to RTL|
 
 
 ### Responsive Example ###
