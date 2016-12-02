@@ -1075,6 +1075,70 @@ PLUGIN</span>
 </code>
 </pre>
 
+<h5>Right To Left</h5>
+
+<dl class="gridtab-7">
+  <dt>Tab 1</dt>
+  <dd>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 2</dt>
+  <dd>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 3</dt>
+  <dd>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 4</dt>
+  <dd>4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 5</dt>
+  <dd>5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 6</dt>
+  <dd>6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 7</dt>
+  <dd>7 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 8</dt>
+  <dd>8 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 9</dt>
+  <dd>9 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 10</dt>
+  <dd>10 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 11</dt>
+  <dd>11 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+  <dt>Tab 12</dt>
+  <dd>12 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales vitae massa mattis auctor. Mauris erat metus, cursus tincidunt leo sit amet, condimentum sollicitudin quam. Sed pharetra non nibh aliquam vulputate. Nullam dui dolor, venenatis sit amet diam nec, commodo sollicitudin augue.</dd>
+</dl>
+<pre>
+<code class="language-javascript">
+  $('.gridtab-7').gridtab({
+      grid: 6,
+      borderWidth: 3,
+      contentPadding: 40,
+      config:{
+        layout:'tab',
+        activeTab:1,
+        rtl:true,
+        showClose:true,
+        showArrows:true
+      },
+      responsive: [{
+          breakpoint: 1024,
+          settings: {
+              grid: 4,
+          }
+      }, {
+          breakpoint: 767,
+          settings: {
+              grid: 3,
+              contentPadding: 20
+          }
+      }, {
+          breakpoint: 520,
+          settings: {
+              grid: 2
+          }
+      }]
+  });
+</code>
+</pre>
+
+
+
 </section>
 
 
@@ -1308,6 +1372,12 @@ PLUGIN</span>
 <td data-label="Default"><code>false</code></td>
 <td data-label="Description">Scrolls to the active tab on click</td>
 </tr>
+<tr>
+<td data-label="Config">rtl</td>
+<td data-label="Type">Boolean</td>
+<td data-label="Default"><code>false</code></td>
+<td data-label="Description">Converts tab to RTL</td>
+</tr>
 </tbody></table>
 
 </section>
@@ -1455,6 +1525,35 @@ PLUGIN</span>
                   }
               }]
 
+          });
+          $('.gridtab-7').gridtab({
+              grid: 6,
+              borderWidth: 3,
+              contentPadding: 40,
+              config:{
+                layout:'tab',
+                activeTab:1,
+                rtl:true,
+                showClose:true,
+                showArrows:true
+              },
+              responsive: [{
+                  breakpoint: 1024,
+                  settings: {
+                      grid: 4,
+                  }
+              }, {
+                  breakpoint: 767,
+                  settings: {
+                      grid: 3,
+                      contentPadding: 20
+                  }
+              }, {
+                  breakpoint: 520,
+                  settings: {
+                      grid: 2
+                  }
+              }]
           });
           onScroll();
 
