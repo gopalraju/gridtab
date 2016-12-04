@@ -18,6 +18,15 @@
 * Custom selectors
 * Right-To-Left Support
 
+## Package Managers ##
+```
+# Bower
+bower install --save gridtab
+
+# NPM
+npm install gridtab
+
+```
 ## Usage ##
 
 Setting up GridTab is really simple
